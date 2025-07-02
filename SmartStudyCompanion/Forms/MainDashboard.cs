@@ -17,6 +17,39 @@ namespace SmartStudyCompanion
             InitializeComponent();
         }
 
-       
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard.FlatStyle = FlatStyle.Flat;
+            Dashboard.FlatAppearance.BorderSize = 0;
+            Dashboard.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;            
+        }
+
+        private void StartTimer_Click(object sender, EventArgs e)
+        {
+            StartTimer.FlatStyle = FlatStyle.Flat;
+            StartTimer.FlatAppearance.BorderSize = 0;
+            StartTimer.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+        }
+
+        private void Tasks_Click(object sender, EventArgs e)
+        {
+            Tasks.FlatStyle = FlatStyle.Flat;
+            Tasks.FlatAppearance.BorderSize = 0;
+            Tasks.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+        }
+
+        private void Reports_Click(object sender, EventArgs e)
+        {
+            Reports.FlatStyle = FlatStyle.Flat;
+            Reports.FlatAppearance.BorderSize = 0;
+            Reports.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            Settings.FlatStyle = FlatStyle.Flat;
+            Settings.FlatAppearance.BorderSize = 0;
+            Settings.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+        }
     }
 }
