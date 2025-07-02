@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace SmartStudyCompanion.Forms
 {
     public partial class TimerScreen : UserControl
     {
         private Timer countdownTimer;
-        private TimeSpan remainingTime;        
-        
+        private TimeSpan remainingTime;
+
         private TimeSpan defaultTime = TimeSpan.FromMinutes(25);
         public TimerScreen()
         {
@@ -38,11 +40,15 @@ namespace SmartStudyCompanion.Forms
             else
             {
                 countdownTimer.Stop();
-                System.Media.SystemSounds.Exclamation.Play(); // 🔊 Sound here
+                System.Media.SystemSounds.Exclamation.Play();
+
+                LogSession();
+
                 MessageBox.Show("Time's up!", "Session Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 remainingTime = defaultTime;
                 UpdateTimerLabel();
-                TimeSelector.Enabled = true;                
+                TimeSelector.Enabled = true;
             }
         }
 
@@ -64,7 +70,7 @@ namespace SmartStudyCompanion.Forms
                     defaultTime = remainingTime; // So Reset uses latest selection
                 }
 
-                countdownTimer.Start();                
+                countdownTimer.Start();
             }
         }
 
@@ -72,8 +78,8 @@ namespace SmartStudyCompanion.Forms
         {
             TimeSelector.Enabled = true;
             if (countdownTimer.Enabled)
-            { 
-                countdownTimer.Stop();                
+            {
+                countdownTimer.Stop();
             }
         }
 
@@ -82,10 +88,34 @@ namespace SmartStudyCompanion.Forms
             TimeSelector.Enabled = true;
             countdownTimer.Stop();
             remainingTime = defaultTime;
-            UpdateTimerLabel();            
+            UpdateTimerLabel();
         }
 
-        
-        
+        private void LogSession()
+        {
+            string filePath = "sessions.json";
+            List<StudySession> sessions;
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                sessions = JsonConvert.DeserializeObject<List<StudySession>>(json) ?? new List<StudySession>();
+            }
+            else
+            {
+                sessions = new List<StudySession>();
+            }
+
+            var newSession = new StudySession
+            {
+                StartTime = DateTime.Now - defaultTime,
+                EndTime = DateTime.Now
+            };
+
+            sessions.Add(newSession);
+
+            string updatedJson = JsonConvert.SerializeObject(sessions, Formatting.Indented);
+            File.WriteAllText(filePath, updatedJson);
+        }
     }
 }
