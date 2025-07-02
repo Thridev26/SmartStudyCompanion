@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartStudyCompanion.Forms;
 
 namespace SmartStudyCompanion
 {
@@ -29,6 +30,13 @@ namespace SmartStudyCompanion
             StartTimer.FlatStyle = FlatStyle.Flat;
             StartTimer.FlatAppearance.BorderSize = 0;
             StartTimer.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
+
+            MainContentPanel.Controls.Clear(); // Clear previous content
+
+            TimerScreen timerScreen = new TimerScreen();
+            timerScreen.Dock = DockStyle.Fill;
+
+            MainContentPanel.Controls.Add(timerScreen);
         }
 
         private void Tasks_Click(object sender, EventArgs e)

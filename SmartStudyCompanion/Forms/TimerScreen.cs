@@ -42,8 +42,7 @@ namespace SmartStudyCompanion.Forms
                 MessageBox.Show("Time's up!", "Session Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 remainingTime = defaultTime;
                 UpdateTimerLabel();
-                TimeSelector.Enabled = true;
-                ShakeForm();
+                TimeSelector.Enabled = true;                
             }
         }
 
@@ -86,24 +85,7 @@ namespace SmartStudyCompanion.Forms
             UpdateTimerLabel();            
         }
 
-        private void ShakeForm()
-        {
-            Form parentForm = this.FindForm();
-            if (parentForm != null)
-            {
-                var original = parentForm.Location;
-                Random rand = new Random();
-
-                for (int i = 0; i < 10; i++)
-                {
-                    int offsetX = rand.Next(-5, 6);
-                    int offsetY = rand.Next(-5, 6);
-                    parentForm.Location = new Point(original.X + offsetX, original.Y + offsetY);
-                    System.Threading.Thread.Sleep(20); // Small pause between shakes
-                }
-
-                parentForm.Location = original;
-            }
-        }
+        
+        
     }
 }
