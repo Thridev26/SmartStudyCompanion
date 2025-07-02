@@ -42,9 +42,11 @@ namespace SmartStudyCompanion
             this.SessionHistory = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dashboardPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.MainContentPanel.SuspendLayout();
+            this.dashboardPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -190,11 +192,21 @@ namespace SmartStudyCompanion
             // 
             // dashboardPanel
             // 
+            this.dashboardPanel.Controls.Add(this.label1);
             this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardPanel.Location = new System.Drawing.Point(0, 0);
             this.dashboardPanel.Name = "dashboardPanel";
             this.dashboardPanel.Size = new System.Drawing.Size(794, 613);
             this.dashboardPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome,";
             // 
             // MainDashboard
             // 
@@ -212,6 +224,8 @@ namespace SmartStudyCompanion
             this.SidePanel.ResumeLayout(false);
             this.MainContentPanel.ResumeLayout(false);
             this.MainContentPanel.PerformLayout();
+            this.dashboardPanel.ResumeLayout(false);
+            this.dashboardPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +245,7 @@ namespace SmartStudyCompanion
         private System.Windows.Forms.Button SessionHistory;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel dashboardPanel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
