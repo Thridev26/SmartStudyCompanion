@@ -30,9 +30,9 @@ namespace SmartStudyCompanion.Forms
         private void InitializeComponent()
         {
             this.TimerLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Start = new System.Windows.Forms.Button();
+            this.Pause = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TimerLabel
@@ -44,52 +44,55 @@ namespace SmartStudyCompanion.Forms
             this.TimerLabel.TabIndex = 0;
             this.TimerLabel.Text = "00:25:00";
             // 
-            // button1
+            // Start
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(34, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Start.FlatAppearance.BorderSize = 0;
+            this.Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Start.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.Location = new System.Drawing.Point(34, 101);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(87, 37);
+            this.Start.TabIndex = 1;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = true;
+            this.Start.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Pause
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(163, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 37);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Pause";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Pause.FlatAppearance.BorderSize = 0;
+            this.Pause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.Pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Pause.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pause.Location = new System.Drawing.Point(163, 101);
+            this.Pause.Name = "Pause";
+            this.Pause.Size = new System.Drawing.Size(87, 37);
+            this.Pause.TabIndex = 2;
+            this.Pause.Text = "Pause";
+            this.Pause.UseVisualStyleBackColor = true;
+            this.Pause.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // Reset
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(277, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 37);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Reset";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Reset.FlatAppearance.BorderSize = 0;
+            this.Reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reset.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset.Location = new System.Drawing.Point(277, 101);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(87, 37);
+            this.Reset.TabIndex = 3;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.button3_Click);
             // 
             // TimerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.Pause);
+            this.Controls.Add(this.Start);
             this.Controls.Add(this.TimerLabel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "TimerScreen";
@@ -102,8 +105,8 @@ namespace SmartStudyCompanion.Forms
         #endregion
 
         private System.Windows.Forms.Label TimerLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.Button Pause;
+        private System.Windows.Forms.Button Reset;
     }
 }
