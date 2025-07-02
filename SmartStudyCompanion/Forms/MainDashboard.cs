@@ -59,5 +59,11 @@ namespace SmartStudyCompanion
             Settings.FlatAppearance.BorderSize = 0;
             Settings.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
         }
+
+        private void SessionHistory_Click(object sender, EventArgs e)
+        {
+            var historyForm = new SessionHistoryForm();
+            historyForm.ShowDialog(); // Opens as modal
+        }
     }
 }
