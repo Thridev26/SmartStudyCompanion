@@ -96,6 +96,7 @@ namespace SmartStudyCompanion.Forms
             string filePath = "sessions.json";
             List<StudySession> sessions;
 
+            // Load existing sessions if the file exists
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
@@ -106,14 +107,16 @@ namespace SmartStudyCompanion.Forms
                 sessions = new List<StudySession>();
             }
 
+            // Create a new session record for the just-finished timer
             var newSession = new StudySession
             {
-                StartTime = DateTime.Now - defaultTime,
+                StartTime = DateTime.Now - defaultTime,  // Assume defaultTime holds the session length
                 EndTime = DateTime.Now
             };
 
             sessions.Add(newSession);
 
+            // Serialize and save the updated sessions list
             string updatedJson = JsonConvert.SerializeObject(sessions, Formatting.Indented);
             File.WriteAllText(filePath, updatedJson);
         }
