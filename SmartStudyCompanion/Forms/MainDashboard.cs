@@ -78,5 +78,11 @@ namespace SmartStudyCompanion
             // After session history closes, show the dashboard again
             this.Show();
         }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

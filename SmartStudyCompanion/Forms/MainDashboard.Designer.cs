@@ -40,6 +40,7 @@ namespace SmartStudyCompanion
             this.MainContentPanel = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SessionHistory = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.MainContentPanel.SuspendLayout();
@@ -69,6 +70,7 @@ namespace SmartStudyCompanion
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.LightGray;
+            this.SidePanel.Controls.Add(this.button1);
             this.SidePanel.Controls.Add(this.SessionHistory);
             this.SidePanel.Controls.Add(this.Settings);
             this.SidePanel.Controls.Add(this.Reports);
@@ -172,6 +174,18 @@ namespace SmartStudyCompanion
             this.SessionHistory.UseVisualStyleBackColor = false;
             this.SessionHistory.Click += new System.EventHandler(this.SessionHistory_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 45);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -205,6 +219,7 @@ namespace SmartStudyCompanion
         private System.Windows.Forms.Button Dashboard;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Button SessionHistory;
+        private System.Windows.Forms.Button button1;
     }
 }
 
