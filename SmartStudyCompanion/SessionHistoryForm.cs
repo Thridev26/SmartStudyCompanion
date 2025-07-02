@@ -10,11 +10,17 @@ namespace SmartStudyCompanion.Forms
     {
         private readonly string filePath = "sessions.json";
         private List<StudySession> sessions;
+        private Form _dashboard;
 
-        public SessionHistoryForm()
+        public SessionHistoryForm(Form dashboard)
         {
             InitializeComponent();
             Load += SessionHistoryForm_Load;
+            _dashboard = dashboard;
+        }
+
+        public SessionHistoryForm()
+        {
         }
 
         private void SessionHistoryForm_Load(object sender, EventArgs e)
@@ -62,11 +68,20 @@ namespace SmartStudyCompanion.Forms
             {
                 HeaderText = "Duration",
                 DataPropertyName = "Duration",
-                Width = 100,
+                Width = 150,
                 DefaultCellStyle = { Format = @"hh\:mm\:ss" } // e.g. 01:15:00
             });
 
             SessionsGridView.DataSource = sessions;
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            // Close this form (SessionHistoryForm)
+            this.Close();
+
+            // Show the dashboard again
+            _dashboard.Show();
         }
     }
 }

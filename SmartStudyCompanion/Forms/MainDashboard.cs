@@ -65,5 +65,18 @@ namespace SmartStudyCompanion
             var historyForm = new SessionHistoryForm();
             historyForm.ShowDialog(); // Opens as modal
         }
+
+        private void SessionHistory_Click_1(object sender, EventArgs e)
+        {
+            // Hide the dashboard while session history is open
+            this.Hide();
+
+            // Pass the current dashboard instance (this) into SessionHistoryForm constructor
+            var sessionHistory = new SessionHistoryForm(this);
+            sessionHistory.ShowDialog();
+
+            // After session history closes, show the dashboard again
+            this.Show();
+        }
     }
 }

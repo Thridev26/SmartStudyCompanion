@@ -39,6 +39,7 @@ namespace SmartStudyCompanion
             this.Dashboard = new System.Windows.Forms.Button();
             this.MainContentPanel = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.SessionHistory = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.MainContentPanel.SuspendLayout();
@@ -68,6 +69,7 @@ namespace SmartStudyCompanion
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.LightGray;
+            this.SidePanel.Controls.Add(this.SessionHistory);
             this.SidePanel.Controls.Add(this.Settings);
             this.SidePanel.Controls.Add(this.Reports);
             this.SidePanel.Controls.Add(this.Tasks);
@@ -82,7 +84,7 @@ namespace SmartStudyCompanion
             // 
             this.Settings.BackColor = System.Drawing.Color.Gainsboro;
             this.Settings.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings.Location = new System.Drawing.Point(12, 276);
+            this.Settings.Location = new System.Drawing.Point(12, 339);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(180, 45);
             this.Settings.TabIndex = 4;
@@ -158,6 +160,18 @@ namespace SmartStudyCompanion
             this.WelcomeLabel.TabIndex = 0;
             this.WelcomeLabel.Text = "Welcome,";
             // 
+            // SessionHistory
+            // 
+            this.SessionHistory.BackColor = System.Drawing.Color.Gainsboro;
+            this.SessionHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SessionHistory.Location = new System.Drawing.Point(12, 275);
+            this.SessionHistory.Name = "SessionHistory";
+            this.SessionHistory.Size = new System.Drawing.Size(180, 45);
+            this.SessionHistory.TabIndex = 5;
+            this.SessionHistory.Text = "Session History";
+            this.SessionHistory.UseVisualStyleBackColor = false;
+            this.SessionHistory.Click += new System.EventHandler(this.SessionHistory_Click_1);
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -190,6 +204,7 @@ namespace SmartStudyCompanion
         private System.Windows.Forms.Button StartTimer;
         private System.Windows.Forms.Button Dashboard;
         private System.Windows.Forms.Label WelcomeLabel;
+        private System.Windows.Forms.Button SessionHistory;
     }
 }
 
