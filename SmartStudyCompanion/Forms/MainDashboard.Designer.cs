@@ -41,6 +41,7 @@ namespace SmartStudyCompanion
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SessionHistory = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dashboardPanel = new System.Windows.Forms.Panel();
             this.TopPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.MainContentPanel.SuspendLayout();
@@ -145,6 +146,7 @@ namespace SmartStudyCompanion
             // MainContentPanel
             // 
             this.MainContentPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MainContentPanel.Controls.Add(this.dashboardPanel);
             this.MainContentPanel.Controls.Add(this.WelcomeLabel);
             this.MainContentPanel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainContentPanel.ForeColor = System.Drawing.Color.DimGray;
@@ -186,6 +188,14 @@ namespace SmartStudyCompanion
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // dashboardPanel
+            // 
+            this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardPanel.Location = new System.Drawing.Point(0, 0);
+            this.dashboardPanel.Name = "dashboardPanel";
+            this.dashboardPanel.Size = new System.Drawing.Size(794, 613);
+            this.dashboardPanel.TabIndex = 1;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -220,6 +230,7 @@ namespace SmartStudyCompanion
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Button SessionHistory;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel dashboardPanel;
     }
 }
 

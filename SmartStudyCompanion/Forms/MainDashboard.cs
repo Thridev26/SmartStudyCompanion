@@ -23,6 +23,11 @@ namespace SmartStudyCompanion
             Dashboard.FlatStyle = FlatStyle.Flat;
             Dashboard.FlatAppearance.BorderSize = 0;
             Dashboard.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;            
+
+            MainContentPanel.Controls.Clear();
+            dashboardPanel.Dock = DockStyle.Fill;
+            MainContentPanel.Controls.Add(dashboardPanel);
+
         }
 
         private void StartTimer_Click(object sender, EventArgs e)
@@ -59,12 +64,7 @@ namespace SmartStudyCompanion
             Settings.FlatAppearance.BorderSize = 0;
             Settings.FlatAppearance.MouseOverBackColor = Color.LightSteelBlue;
         }
-
-        private void SessionHistory_Click(object sender, EventArgs e)
-        {
-            var historyForm = new SessionHistoryForm();
-            historyForm.ShowDialog(); // Opens as modal
-        }
+               
 
         private void SessionHistory_Click_1(object sender, EventArgs e)
         {
@@ -84,5 +84,6 @@ namespace SmartStudyCompanion
         {
             Application.Exit();
         }
+        
     }
 }
