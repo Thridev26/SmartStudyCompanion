@@ -33,14 +33,18 @@ namespace SmartStudyCompanion.Forms
             this.Start = new System.Windows.Forms.Button();
             this.Pause = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
+            this.TimeSelector = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.TimeSelector)).BeginInit();
             this.SuspendLayout();
             // 
             // TimerLabel
             // 
             this.TimerLabel.AutoSize = true;
+            this.TimerLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimerLabel.Location = new System.Drawing.Point(170, 54);
             this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(71, 20);
+            this.TimerLabel.Size = new System.Drawing.Size(86, 28);
             this.TimerLabel.TabIndex = 0;
             this.TimerLabel.Text = "00:25:00";
             // 
@@ -86,10 +90,46 @@ namespace SmartStudyCompanion.Forms
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
+            // TimeSelector
+            // 
+            this.TimeSelector.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeSelector.Location = new System.Drawing.Point(244, 160);
+            this.TimeSelector.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.TimeSelector.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.TimeSelector.Name = "TimeSelector";
+            this.TimeSelector.Size = new System.Drawing.Size(120, 34);
+            this.TimeSelector.TabIndex = 4;
+            this.TimeSelector.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TimeSelector.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 28);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Customise Time:";
+            // 
             // TimerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TimeSelector);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.Start);
@@ -97,6 +137,7 @@ namespace SmartStudyCompanion.Forms
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "TimerScreen";
             this.Size = new System.Drawing.Size(400, 250);
+            ((System.ComponentModel.ISupportInitialize)(this.TimeSelector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +149,7 @@ namespace SmartStudyCompanion.Forms
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.NumericUpDown TimeSelector;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -13,9 +13,9 @@ namespace SmartStudyCompanion.Forms
     public partial class TimerScreen : UserControl
     {
         private Timer countdownTimer;
-        private TimeSpan remainingTime;
-        private readonly TimeSpan defaultTime = TimeSpan.FromMinutes(25);
-        private bool isPaused = false;
+        private TimeSpan remainingTime;        
+        
+        private TimeSpan defaultTime = TimeSpan.FromMinutes(25);
         public TimerScreen()
         {
             InitializeComponent();
@@ -38,9 +38,12 @@ namespace SmartStudyCompanion.Forms
             else
             {
                 countdownTimer.Stop();
+                System.Media.SystemSounds.Exclamation.Play(); // 🔊 Sound here
                 MessageBox.Show("Time's up!", "Session Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 remainingTime = defaultTime;
                 UpdateTimerLabel();
+                TimeSelector.Enabled = true;
+                ShakeForm();
             }
         }
 
@@ -51,28 +54,56 @@ namespace SmartStudyCompanion.Forms
 
         private void Start_Click(object sender, EventArgs e)
         {
+            TimeSelector.Enabled = false;
             if (!countdownTimer.Enabled)
             {
-                countdownTimer.Start();
-                isPaused = false;
+                // If the timer is reset or just starting, use selected time
+                if (remainingTime == TimeSpan.Zero || remainingTime == defaultTime)
+                {
+                    int selectedMinutes = (int)TimeSelector.Value;
+                    remainingTime = TimeSpan.FromMinutes(selectedMinutes);
+                    defaultTime = remainingTime; // So Reset uses latest selection
+                }
+
+                countdownTimer.Start();                
             }
         }
 
         private void Pause_Click(object sender, EventArgs e)
         {
+            TimeSelector.Enabled = true;
             if (countdownTimer.Enabled)
             { 
-                countdownTimer.Stop();
-                isPaused = true;
+                countdownTimer.Stop();                
             }
         }
 
         private void Reset_Click(object sender, EventArgs e)
         {
+            TimeSelector.Enabled = true;
             countdownTimer.Stop();
             remainingTime = defaultTime;
-            UpdateTimerLabel();
-            isPaused = false;
+            UpdateTimerLabel();            
+        }
+
+        private void ShakeForm()
+        {
+            Form parentForm = this.FindForm();
+            if (parentForm != null)
+            {
+                var original = parentForm.Location;
+                Random rand = new Random();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    int offsetX = rand.Next(-5, 6);
+                    int offsetY = rand.Next(-5, 6);
+                    parentForm.Location = new Point(original.X + offsetX, original.Y + offsetY);
+                    System.Threading.Thread.Sleep(20); // Small pause between shakes
+                }
+
+                parentForm.Location = original;
+            }
         }
     }
 }
