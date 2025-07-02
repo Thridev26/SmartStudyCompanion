@@ -38,8 +38,10 @@ namespace SmartStudyCompanion
             this.StartTimer = new System.Windows.Forms.Button();
             this.Dashboard = new System.Windows.Forms.Button();
             this.MainContentPanel = new System.Windows.Forms.Panel();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
+            this.MainContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -139,10 +141,22 @@ namespace SmartStudyCompanion
             // MainContentPanel
             // 
             this.MainContentPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MainContentPanel.Controls.Add(this.WelcomeLabel);
+            this.MainContentPanel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainContentPanel.ForeColor = System.Drawing.Color.DimGray;
             this.MainContentPanel.Location = new System.Drawing.Point(206, 86);
             this.MainContentPanel.Name = "MainContentPanel";
             this.MainContentPanel.Size = new System.Drawing.Size(794, 613);
             this.MainContentPanel.TabIndex = 2;
+            // 
+            // WelcomeLabel
+            // 
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Location = new System.Drawing.Point(20, 20);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(138, 38);
+            this.WelcomeLabel.TabIndex = 0;
+            this.WelcomeLabel.Text = "Welcome,";
             // 
             // MainDashboard
             // 
@@ -158,6 +172,8 @@ namespace SmartStudyCompanion
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.SidePanel.ResumeLayout(false);
+            this.MainContentPanel.ResumeLayout(false);
+            this.MainContentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -173,6 +189,7 @@ namespace SmartStudyCompanion
         private System.Windows.Forms.Button Tasks;
         private System.Windows.Forms.Button StartTimer;
         private System.Windows.Forms.Button Dashboard;
+        private System.Windows.Forms.Label WelcomeLabel;
     }
 }
 
