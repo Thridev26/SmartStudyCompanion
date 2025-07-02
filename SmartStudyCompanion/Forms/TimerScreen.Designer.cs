@@ -41,9 +41,9 @@ namespace SmartStudyCompanion.Forms
             // TimerLabel
             // 
             this.TimerLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimerLabel.Location = new System.Drawing.Point(109, 40);
+            this.TimerLabel.Location = new System.Drawing.Point(153, 39);
             this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(186, 54);
+            this.TimerLabel.Size = new System.Drawing.Size(184, 55);
             this.TimerLabel.TabIndex = 0;
             this.TimerLabel.Text = "00:25:00";
             // 
@@ -53,7 +53,7 @@ namespace SmartStudyCompanion.Forms
             this.Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Start.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start.Location = new System.Drawing.Point(30, 114);
+            this.Start.Location = new System.Drawing.Point(45, 114);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(87, 37);
             this.Start.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace SmartStudyCompanion.Forms
             this.Pause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.Pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pause.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pause.Location = new System.Drawing.Point(159, 114);
+            this.Pause.Location = new System.Drawing.Point(174, 114);
             this.Pause.Name = "Pause";
             this.Pause.Size = new System.Drawing.Size(87, 37);
             this.Pause.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace SmartStudyCompanion.Forms
             this.Reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Reset.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset.Location = new System.Drawing.Point(273, 114);
+            this.Reset.Location = new System.Drawing.Point(288, 114);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(87, 37);
             this.Reset.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace SmartStudyCompanion.Forms
             // TimeSelector
             // 
             this.TimeSelector.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeSelector.Location = new System.Drawing.Point(240, 173);
+            this.TimeSelector.Location = new System.Drawing.Point(255, 173);
             this.TimeSelector.Maximum = new decimal(new int[] {
             120,
             0,
@@ -117,7 +117,7 @@ namespace SmartStudyCompanion.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 173);
+            this.label1.Location = new System.Drawing.Point(45, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 28);
             this.label1.TabIndex = 5;
