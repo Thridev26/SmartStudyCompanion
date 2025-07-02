@@ -56,7 +56,7 @@ namespace SmartStudyCompanion.Forms
             this.Start.TabIndex = 1;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.button1_Click);
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // Pause
             // 
@@ -70,7 +70,7 @@ namespace SmartStudyCompanion.Forms
             this.Pause.TabIndex = 2;
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = true;
-            this.Pause.Click += new System.EventHandler(this.button2_Click);
+            this.Pause.Click += new System.EventHandler(this.Pause_Click);
             // 
             // Reset
             // 
@@ -84,7 +84,7 @@ namespace SmartStudyCompanion.Forms
             this.Reset.TabIndex = 3;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
-            this.Reset.Click += new System.EventHandler(this.button3_Click);
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // TimerScreen
             // 
